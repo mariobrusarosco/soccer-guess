@@ -15,6 +15,10 @@ class User {
       lng: parseFloat(faker.address.longitude()),
     };
   }
+
+  markerContent() {
+    return faker.company.catchPhrase();
+  }
 }
 
 export default User;

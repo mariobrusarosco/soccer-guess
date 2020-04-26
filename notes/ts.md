@@ -30,3 +30,17 @@ export class MyClass {
 ## Using Global Variables
 
 ### Adding a third party type definition file
+
+```bash
+  yarn add @types/googlemaps -D
+```
+
+## Select a DOM element
+
+```ts
+const map = document.querySelector(".map") as HTMLElement;
+```
+
+## TS Compiler
+
+## Interfaces
