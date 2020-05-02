@@ -4,4 +4,5 @@ export interface MarkerInterface {
     lng: number;
   };
   markerContent(): string;
+  color: string;
 }

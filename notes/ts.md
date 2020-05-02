@@ -41,6 +41,41 @@ export class MyClass {
 const map = document.querySelector(".map") as HTMLElement;
 ```
 
+## Interfaces
+
 ## TS Compiler
 
-## Interfaces
+```bash
+tsc --init
+```
+
+Creates a `tsconfig.json` file at `root` level
+
+### tsconfig
+
+```json
+{
+  "srcDir": "./src", // Where the .ts/.tsx files are
+  "outDir": "./build" // Where the compiled code is saved
+}
+```
+
+### Watch Mode
+
+```bash
+tsc -w
+```
+
+### Concurrent Compilation and Execution
+
+```bash
+npm install nodemon concurrently
+```
+
+```bash
+tsc --init
+```
+
+```bash
+tsc --init
+```
