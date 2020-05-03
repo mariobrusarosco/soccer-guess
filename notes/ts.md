@@ -72,10 +72,37 @@ tsc -w
 npm install nodemon concurrently
 ```
 
-```bash
-tsc --init
+```json
+{
+  "scripts": {
+    "start:build" : "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*",
+  }
 ```
 
 ```bash
 tsc --init
+```
+
+## Shorthand Class properties
+
+```ts
+class Sorter {
+  collection: number[];
+
+  constructor(collection: number[]) {
+    this.collection = collection;
+  }
+}
+```
+
+Is the same as:
+
+```ts
+class Sorter {
+  constructor(public collection: number[]) {
+    ...
+  }
+}
 ```
