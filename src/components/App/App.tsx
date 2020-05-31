@@ -1,11 +1,15 @@
 import Home from "../../screen/Home";
 // import GoogleMaps from "../GoogleMaps";
-import Sorter from "../Sorter";
+import NumbersCollection from "../NumbersCollection";
+import CharactersCollection from "../CharactersCollection";
 
-const sorter = new Sorter([-1, 3, 10, -20, 0]);
-sorter.sort();
+const numbers = new NumbersCollection([100, -1, 3, 10, -20, 0]);
+numbers.sort();
+console.log(numbers);
 
-console.log(sorter.collection);
+const characters = new CharactersCollection("ZaoB");
+characters.sort();
+console.log(characters);
 
 const App: React.FC = () => {
   console.log("App Component", APPLICATION);

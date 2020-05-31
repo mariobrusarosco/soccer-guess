@@ -106,3 +106,31 @@ class Sorter {
   }
 }
 ```
+
+## Abstract Classes
+
+```ts
+abstract class Sorter {
+  abstract compare(leftIndex: number, rightIndex: number): boolean;
+  abstract swap(leftIndex: number, rightIndex: number): void;
+  abstract length: number;
+
+  sort() {
+    const { length } = this;
+
+    for (let i = 0; i < length; i++) {
+      for (let j = 0; j < length - i - 1; j++) {
+        if (this.compare(j, j + 1)) {
+          this.swap(j, j + 1);
+        }
+      }
+    }
+  }
+}
+```
+
+## Interfaces x Abstract Classes
+
+> Use Interfaces when the objects that share a few charactericts are are no similar with each other: User() and Company() may share a few things, but in general they are quite different things
+
+> Use Abstract classes when the objects are quite similar. If they share too many methods and those methods are implemented in a similar way... use an abstract class
