@@ -41,8 +41,6 @@ export class MyClass {
 const map = document.querySelector(".map") as HTMLElement;
 ```
 
-## Interfaces
-
 ## TS Compiler
 
 ```bash
@@ -134,3 +132,25 @@ abstract class Sorter {
 > Use Interfaces when the objects that share a few charactericts are are no similar with each other: User() and Company() may share a few things, but in general they are quite different things
 
 > Use Abstract classes when the objects are quite similar. If they share too many methods and those methods are implemented in a similar way... use an abstract class
+
+## Generics
+
+- Like function arguments, but for types.
+- Let us return a multiple options for a return type.
+
+### Basic Example
+
+```ts
+class Print<T> {
+  data: T;
+
+  constructor(initialData: T) {
+    this.data = initialData;
+
+    console.log(this.data);
+  }
+}
+
+const myNumber = new Print<number>(10);
+const myString = new Print<string>("John");
+```

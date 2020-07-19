@@ -1,4 +1,4 @@
-import { MarkerInterface } from "../../interfaces/MarkerInterface";
+import { MarkerInterface } from "../../../interfaces/MarkerInterface";
 
 class CustomMap {
   private googleMap: google.maps.Map;

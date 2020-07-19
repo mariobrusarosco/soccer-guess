@@ -1,6 +1,6 @@
 // LEARNING
 import faker from "faker";
-import { MarkerInterface } from "../../interfaces/MarkerInterface";
+import { MarkerInterface } from "../../../interfaces/MarkerInterface";
 
 class User implements MarkerInterface {
   name: string;
