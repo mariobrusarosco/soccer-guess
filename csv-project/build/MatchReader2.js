@@ -1,11 +1,18 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var utils_1 = require("./utils");
+var CsvFileReader2_1 = __importDefault(require("./CsvFileReader2"));
 var MatchReader2 = /** @class */ (function () {
     function MatchReader2(reader) {
         this.reader = reader;
         this.matches = [];
     }
+    MatchReader2.fromCsv = function (filename) {
+        return new MatchReader2(new CsvFileReader2_1.default(filename));
+    };
     MatchReader2.prototype.load = function () {
         this.reader.read();
         this.matches = this.reader.data.map(function (row) {
@@ -22,4 +29,4 @@ var MatchReader2 = /** @class */ (function () {
     };
     return MatchReader2;
 }());
-exports.MatchReader2 = MatchReader2;
+exports.default = MatchReader2;

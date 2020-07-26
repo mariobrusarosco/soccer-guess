@@ -1,13 +1,19 @@
 import { dateConverter } from "./utils";
 import { MatchData } from "./enums/MatchData";
 import { MatchResult } from "./enums/MatchResult";
+import CsvFileReader2 from "./CsvFileReader2";
+import MatchReader from "./MatchReader";
 
 interface DataReader {
   read(): void;
   data: string[][];
 }
 
-export class MatchReader2 {
+class MatchReader2 {
+  static fromCsv(filename: string): MatchReader2 {
+    return new MatchReader2(new CsvFileReader2(filename));
+  }
+
   matches: MatchData[] = [];
 
   constructor(public reader: DataReader) {}
@@ -26,7 +32,9 @@ export class MatchReader2 {
           row[5] as MatchResult,
           row[6],
         ];
-      }
+      },
     );
   }
 }
+
+export default MatchReader2;
