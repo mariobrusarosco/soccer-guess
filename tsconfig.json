@@ -14,10 +14,9 @@
     "target": "es2015",
     "module": "es2015",
     "strict": true,
-    // "jsx": "react",
+    "jsx": "reaxct",
     "baseUrl": "/"
   },
-  // "include": ["src/**/*"],
-  "include": ["src/domain/Learning/CSV/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

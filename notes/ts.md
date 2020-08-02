@@ -154,3 +154,41 @@ class Print<T> {
 const myNumber = new Print<number>(10);
 const myString = new Print<string>("John");
 ```
+
+### Generics with Functions
+
+```ts
+const printItemsOfArray = <T>(array: T[]): void => {
+  array.forEach((item) => console.log(item));
+};
+
+printItemsOfArray(["a", "b"]);
+printItemsOfArray([1, 2]);
+```
+
+### Constraints
+
+```ts
+class Car {
+  print(): void {
+    console.log("I am a car");
+  }
+}
+
+class House {
+  print(): void {
+    console.log("I am a house");
+  }
+}
+
+interface Printable {
+  print(): void;
+}
+
+const printHouseOrCars = <T extends Printable>(array: T[]): void => {
+  array.forEach((item) => item.print());
+};
+
+printHouseOrCars([new Car(), new Car()]);
+printHouseOrCars([new House(), new House()]);
+```

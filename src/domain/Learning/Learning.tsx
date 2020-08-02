@@ -1,6 +1,7 @@
 // import GoogleMaps from "./GoogleMaps";
 import NumbersCollection from "./NumbersCollection";
 import CharactersCollection from "./CharactersCollection";
+import "./Generics";
 
 const numbers = new NumbersCollection([100, -1, 3, 10, -20, 0]);
 numbers.sort();
