@@ -1,10 +1,10 @@
 import packageJSON from "../package.json";
 
 const commonConfiguration = {
-  APP_NAME: "Front Boilerplate",
+  APP_NAME: "Soccer Guess",
   ENVIRONMENT: process.env.NODE_ENV,
   VERSION: packageJSON.version,
-  ROOT_URL: "/",
+  ROOT_URL: "",
   API: {
     API_ROOT: "https://api.unsplash.com/"
   },

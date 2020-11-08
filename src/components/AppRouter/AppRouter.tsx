@@ -1,96 +1,63 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Home from "../../screen/Home";
-import SignIn from "../../screen/SignIn";
-import SignUp from "../../screen/SignUp";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import Home from "../../screens/Home";
+// import SignIn from "../../screens/SignIn";
+// import SignUp from "../../screens/SignUp";
+import Header from "../Header/Header";
 
 // Vendors
 // import { Suspense } from "react";
 // import { useSelector } from 'react-redux'
 // import { BrowserRouter, Route, Switch } from 'react-router-dom'
-// import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import RoutesLoader from "../Loaders/RouteLoader";
+import routes from "../../routes";
+import RouteLayout from "../RouteLayout/";
+import AppLayout from "../AppLayout";
 
-// Routes Data
-// import routes from 'configPath/common/routes'
-
-// Components
-// import Header from 'components/Header'
-// import AppBootstrap from 'components/AppBootstrap'
-// import AppLayout from 'components/AppLayout'
-// import RoutesLoader from 'components/Loaders/RoutesLoader'
-
-// const RouterStructure = () => {
-//   return (
-//     <BrowserRouter>
-//       <Route
-//         render={({ location }) => (
-//           <>
-//             <TransitionGroup>
-//               <CSSTransition
-//                 key={location.key}
-//                 classNames="route-motion"
-//                 timeout={350}
-//                 appear
-//               >
-//                 <div>
-//                   <AppLayout>
-//                     <Suspense fallback={<RoutesLoader />}>
-//                       <Switch location={location}>
-//                         {routes.map(({ Component, ...props }, i) => (
-//                           <Route
-//                             location={location}
-//                             component={Component}
-//                             {...props}
-//                             key={i}
-//                           />
-//                         ))}
-//                       </Switch>
-//                     </Suspense>
-//                   </AppLayout>
-//                 </div>
-//               </CSSTransition>
-//             </TransitionGroup>
-//           </>
-//         )}
-//       />
-//     </BrowserRouter>
-//   );
-// };
+const RouterStructure = () => {
+  return (
+    <Route
+      render={({ location }) => (
+        <TransitionGroup style={{ position: "relative" }}>
+          <CSSTransition
+            key={location.key}
+            classNames="route-motion"
+            timeout={350}
+            appear
+          >
+            <RouteLayout data-testid="motion-wrapper">
+              <React.Suspense fallback={<RoutesLoader />}>
+                <Switch location={location}>
+                  {routes.map(({ Component, ...props }, i) => (
+                    <Route
+                      location={location}
+                      component={Component}
+                      {...props}
+                      key={i}
+                    />
+                  ))}
+                </Switch>
+              </React.Suspense>
+            </RouteLayout>
+          </CSSTransition>
+        </TransitionGroup>
+      )}
+    />
+  );
+};
 
 // const AppRouter = () => {
 //   return <RouterStructure />;
 // };
 
 const AppRouter: React.FunctionComponent = () => (
-  <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/sign-in">Sign in</Link>
-          </li>
-          <li>
-            <Link to="/sign-up">Sign up</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Switch>
-        <Route path="/sign-in">
-          <SignIn />
-        </Route>
-        <Route path="/sign-up">
-          <SignUp />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </div>
-  </Router>
+  <AppLayout>
+    <Router>
+      <Header />
+      <RouterStructure />
+    </Router>
+  </AppLayout>
 );
 
 export default AppRouter;

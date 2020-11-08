@@ -9,7 +9,7 @@ const developmentConfiguration = () => ({
   mode: "development",
   devtool: "source-map",
   output: {
-    filename: "[name].development.bundle.js",
+    filename: "[id].development.bundle.js",
     path: resolve(__dirname, "dist"),
     publicPath: "/"
   },

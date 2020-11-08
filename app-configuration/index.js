@@ -1,6 +1,6 @@
 console.log(process.env.NODE_ENV);
 
-const setConfigByEnvironment = (() => {
+export const setConfigByEnvironment = (() => {
   return {
     // ...require(`./${process.env.NODE_ENV}`),
     ...require("./common"),

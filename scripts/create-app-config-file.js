@@ -8,7 +8,7 @@ console.log(
 
 fs.writeFile(
   "./app-configuration.json",
-  JSON.stringify(appConfiguration),
+  JSON.stringify(appConfiguration.default),
   err => {
     if (err) {
       console.error(

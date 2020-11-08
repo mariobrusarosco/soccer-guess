@@ -12,8 +12,8 @@
     "noUnusedLocals": true,
     "noImplicitAny": true,
     "target": "es2015",
-    "module": "es2015",
-    "strict": true,
+    "module": "es2020",
+    "strict": false,
     "jsx": "react",
     "baseUrl": "/"
   },
