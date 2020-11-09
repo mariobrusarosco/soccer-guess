@@ -33,11 +33,11 @@ const Wrapper = styled.div`
     animation-fill-mode: forwards;
 
     &:nth-child(1) {
-      animation-duration: 0.6s;
+      animation-duration: 0.7s;
     }
 
     &:nth-child(2) {
-      animation-duration: 0.8s;
+      animation-duration: 0.9s;
     }
   }
 `;
