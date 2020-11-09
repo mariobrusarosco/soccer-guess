@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 150px 1fr;
 `;
 
 const AppLayout = (props: any) => {

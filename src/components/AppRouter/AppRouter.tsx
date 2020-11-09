@@ -46,11 +46,6 @@ const RouterStructure = () => {
     />
   );
 };
-
-// const AppRouter = () => {
-//   return <RouterStructure />;
-// };
-
 const AppRouter: React.FunctionComponent = () => (
   <AppLayout>
     <Router>

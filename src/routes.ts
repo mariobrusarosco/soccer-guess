@@ -15,6 +15,18 @@ const routes = [
     exact: true,
   },
   {
+    name: "Leagues",
+    path: `${ROOT_URL}/leagues`,
+    Component: React.lazy(() => import("./screens/Leagues")),
+    exact: true,
+  },
+  {
+    name: "Tournaments",
+    path: `${ROOT_URL}/tournaments`,
+    Component: React.lazy(() => import("./screens/Tournaments")),
+    exact: true,
+  },
+  {
     name: "Home",
     path: `${ROOT_URL}`,
     Component: React.lazy(() => import("./screens/Home")),
